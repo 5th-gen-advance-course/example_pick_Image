@@ -13,10 +13,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 
 import com.example.ratha.selectordemo.entity.UrlModel;
 
@@ -44,6 +46,12 @@ public class RegisterUrlActivity extends AppCompatActivity {
     ImageView ivImage;
     @BindView(R.id.tvDesc)
     EditText tvDesc;
+    @BindView(R.id.spinner)
+    Spinner spCategory;
+    @BindView(R.id.spSobCategory)
+    Spinner spSubcategory;
+    String[] cat={"ការអប់រំ","ការកម្សាន្ត","ព័ត៌មាន និងការផ្សព្វផ្សាយ","រដ្ឋាភិបាល"};
+    String[] subCat={"វិទ្យាស្ថាន","សាកលវិទ្យាល័យ","មជ្ឈមណ្ឌល សាលាចំណេះទូទៅ","សិក្សាបែបអេឡិចត្រូនិច"};
 
     private UrlModel url;
     private static final int PICK_IMAGE=1;
@@ -58,6 +66,11 @@ public class RegisterUrlActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE }, PICK_IMAGE);
         }
 
+        ArrayAdapter<String> catAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,cat);
+        ArrayAdapter<String> subCatAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,subCat);
+
+        spCategory.setAdapter(catAdapter);
+        spSubcategory.setAdapter(subCatAdapter);
         //getData
     }
 
