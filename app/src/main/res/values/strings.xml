@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SelectorDemo</string>
+    <string name="add_url_title">បន្ថែមគេហទំព័រ</string>
+    <string name="tv_url_title_hint">ចំណងជើងគេហទំព័រ</string>
+    <string name="rd_url_website_hint">វេបសាយ</string>
+    <string name="rd_url_fb_hint" >ហ្វេសបុក</string>
+</resources>
